@@ -1,13 +1,11 @@
 Source: thrift
 Section: devel
 Priority: extra
-Build-Depends: debhelper (>= 5), build-essential, mono-gmcs, python-dev, ant,
-    libmono-dev, erlang-base, ruby1.8-dev, autoconf, python-support, automake,
+Build-Depends: debhelper (>= 5), build-essential, python-dev,
+    ruby1.8-dev, autoconf, python-support, automake,
     pkg-config, libtool, bison, flex, libboost-dev | libboost1.40-dev, python-all, python-all-dev,
-    python-all-dbg, ruby, openjdk-6-jdk | java-sdk, libcommons-lang-java,
-    libboost-test-dev | libboost-test1.40-dev, libevent-dev, perl (>= 5.8.0-7),
-    php5, php5-dev
-Maintainer: Thrift Developer's <dev@thrift.apache.org>
+    python-all-dbg, ruby, libevent-dev, libglib2.0-dev
+Maintainer: EfficientCloud Technical Staff <support@efficientcloud.com>
 Homepage: http://thrift.apache.org/
 Vcs-Svn: https://svn.apache.org/repos/asf/thrift
 Vcs-Browser: http://svn.apache.org/viewvc/thrift
@@ -67,59 +65,6 @@ Description: Ruby bindings for Thrift
  classes, and then the modules in this package will allow you to use those
  classes in your programs.
 
-Package: libthrift-java
-Architecture: all
-Section: libs
-Depends: java-gcj-compat | java1-runtime | java2-runtime, ${misc:Depends}
-Recommends: libcommons-lang-java
-Description: Java bindings for Thrift
- Thrift is a software framework for scalable cross-language services
- development. It combines a software stack with a code generation engine to
- build services that work efficiently and seamlessly.
- This package contains the Java bindings for Thrift. You will need the thrift
- tool (in the thrift-compiler package) to compile your definition to Java
- classes, and then the modules in this package will allow you to use those
- classes in your programs.
-
-Package: libthrift-cil
-Architecture: all
-Section: libs
-Depends: cli-common, libmono-corlib1.0-cil (>= 1.0), libmono-system1.0-cil (>= 1.0), ${misc:Depends}
-Description: CLI bindings for Thrift
- Thrift is a software framework for scalable cross-language services
- development. It combines a software stack with a code generation engine to
- build services that work efficiently and seamlessly.
- This package contains the CLI bindings for Thrift. You will need the thrift
- tool (in the thrift-compiler package) to compile your definition to C#
- classes, and then the modules in this package will allow you to use those
- classes in your programs.
-
-Package: libthrift-erlang
-Architecture: all
-Section: libs
-Depends: erlang-nox, ${misc:Depends}
-Description: Erlang bindings for Thrift
- Thrift is a software framework for scalable cross-language services
- development. It combines a software stack with a code generation engine to
- build services that work efficiently and seamlessly.
- This package contains the Erlang bindings for Thrift. You will need the thrift
- tool (in the thrift-compiler package) to compile your definition to Erlang
- classes, and then the modules in this package will allow you to use those
- classes in your programs.
-
-Package: libthrift-perl
-Architecture: all
-Section: perl
-Depends: perl (>= 5.8.0-7), ${misc:Depends}
-Description: Perl bindings for Thrift
- Thrift is a software framework for scalable cross-language services
- development. It combines a software stack with a code generation engine to
- build services that work efficiently and seamlessly.
- This package contains the Perl bindings for Thrift. You will need the thrift
- tool (in the thrift-compiler package) to compile your definition to Perl
- classes, and then the modules in this package will allow you to use those
- classes in your programs.
-
 Package: libthrift0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -139,14 +84,3 @@ Description: Thrift C++ library (development headers)
  build services that work efficiently and seamlessly.
  This package contains the development libraries required for writing C++
  applications.
-
-Package: php5-thrift
-Architecture: any
-Section: php
-Depends: ${php:Depends}, ${shlibs:Depends}, ${misc:Depends}
-Provides: ${php:Provides}
-Description: PHP bindings for Thrift
- Thrift is a software framework for scalable cross-language services
- development. It combines a software stack with a code generation engine to
- build services that work efficiently and seamlessly.
- This package contains the PHP bindings for Thrift.
